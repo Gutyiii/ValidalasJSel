@@ -22,7 +22,7 @@ function validalas() {
     var urlapadatok = "";
     var hiba = "";
     var filter = /[A-Z]+[a-z]{2,}/;
-    var emailfilter= /[*a-z]+@+[*a-z]+.+[*a-z]/;
+    var emailfilter = /[*a-z]+@+[*a-z]+.+[*a-z]/;
     if (!filter.test(ID("nev").value)) {
         hiba += "A név nagybetűvel kezdődjön és legalább három karakter legyen! \n\
                 Legalább három karakter hosszú legyen a név!";
@@ -31,7 +31,7 @@ function validalas() {
         ID("nev").style.border = "none";
         urlapadatok += "Név: " + ID("nev").value + "<br>";
     }
-    
+
     if (!emailfilter.test(ID("email").value)) {
         hiba += "Az kisbetűvel kezdődjön, legyen benne kukac, következzen utána kisbetű, legyen egy pont és végül még néhány kisbetű.";
         ID("email").style.border = "3px solid red";
@@ -39,15 +39,21 @@ function validalas() {
         ID("email").style.border = "none";
         urlapadatok += "Email: " + ID("email").value + "<br>";
     }
-    
-    if (!emailfilter.test(ID("emailujra").value)) {
-        hiba += "Az kisbetűvel kezdődjön, legyen benne kukac, következzen utána kisbetű, legyen egy pont és végül még néhány kisbetű.";
+
+
+
+    if (!emailfilter.test(ID("emailujra").value) === emailfilter.test(ID("email").value)) {
+        hiba += "Nem ugyanaz a két email cím.";
         ID("emailujra").style.border = "3px solid red";
+        if (emailfilter.test(ID("emailujra").value) === "") {
+            hiba += "Üres.";
+            ID("emailujra").style.border = "3px solid red";
+        }
     } else {
         ID("emailujra").style.border = "none";
         urlapadatok += "Email űjra: " + ID("emailujra").value + "<br>";
     }
-    
+
     console.log(hiba);
     $("aside section:nth-child(1) p")[0].innerHTML = hiba;
     $("aside section:nth-child(2) p")[0].innerHTML = urlapadatok;
