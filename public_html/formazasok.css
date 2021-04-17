@@ -1,10 +1,43 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 2021.04.14., 10:03:53
-    Author     : gutye
-*/
+@charset "utf-8";
 
+header, nav, article, aside, footer {
+    border: 1px solid gray;
+}
+
+main {
+    width: 80%;
+    max-width: 1000px;
+    display: grid;
+    margin: auto;
+    grid-template-areas:
+        "h h h"
+        "n a s"
+        "f f f";
+    grid-gap: 10px;
+    
+}
+
+header {
+    grid-area: h;
+    background-color: orange;
+}
+
+nav {
+    grid-area: n;
+    background-color: lightgreen;
+}
+
+article {
+    grid-area: a;
+    background-color: beige;
+}
+
+aside {
+    grid-area: s;
+    background-color: lightblue;
+}
+
+footer {
+    grid-area: f;
+    background-color: lightcoral;
+}

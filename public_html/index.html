@@ -38,10 +38,28 @@ and open the template in the editor.
                             <label for="emailujra">Email újra:</label>                           
                             <input type="email" name="emailujra" id="emailujra" placeholder="valami123@valami.hu újra" title="" >
                             <br>
-                            <p>HÁZI:gridekkel megvalósítás az oldal, kép a webprog commentbe</p>
+                            <label for="telefon">Telefonszám:</label>                           
+                            <input type="number" name="telefon" id="telefon" placeholder="06301234567" title="" >
+                            <br>
                         </div> 
                     </fieldset>
-                    <input type="button" id="kuld" value="Küld">
+                    <fieldset>
+                        <label for="oldal">Weboldal: </label>                           
+                        <input type="url" name="oldal" id="oldal" placeholder="https://valami.com/" title="" >
+                        <br>
+                        <label for="prio">Priorítás: </label>
+                        <select id="prio">
+                            <option selected>Válassz.. </option>
+                            <option>Szingli</option>
+                            <option>Házas életet él</option>
+                            <option>Egyéb</option>
+                        </select>
+                        <br>
+                        <label for="uzi">Üzenet: </label>
+                        <input type="text" name="uzi" id="uzi" style="width: 300px; height: 100px">
+                        <br>
+                    </fieldset>
+                    <input type="button" id="kuld" value="Küldés">
                     </article>
                     <aside>
                         <section>
